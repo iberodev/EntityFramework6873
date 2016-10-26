@@ -17,6 +17,7 @@ namespace BulkDeleteCreate.Controllers
         [HttpGet]
         public async Task<IActionResult> Index()
         {
+            Console.WriteLine("Running sample");
             try
             {
                 await _testRepository.UpdateGroupMembershipsAsync(AppSettings.UserId);
