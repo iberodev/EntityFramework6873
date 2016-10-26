@@ -13,7 +13,7 @@ git clone https://github.com/iberodev/EntityFramework6873.git
 ```
 cd EntityFramework6873
 dotnet restore
-``
+```
 
 * Go to the main project
 ```
