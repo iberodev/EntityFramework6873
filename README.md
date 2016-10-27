@@ -1,7 +1,7 @@
 # EntityFramework6873
 
 This is a Sample project created with ASP.NET Core 1.0.1 and EF Core 1.0.1
-to show the issue with [the argument null problem] (https://github.com/aspnet/EntityFramework/issues/6873)
+to show the issue with [the bulk delete and create problem] (https://github.com/aspnet/EntityFramework/issues/6873)
 
 # Instructions to reproduce
 * Clone this repository 
