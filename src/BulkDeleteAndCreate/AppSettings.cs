@@ -15,7 +15,7 @@ namespace BulkDeleteCreate
         {
             return new List<Guid>
             {
-                MetallicaId, PinkFloydId
+                TheWhoId, MetallicaId, PinkFloydId
             };
         }
     }

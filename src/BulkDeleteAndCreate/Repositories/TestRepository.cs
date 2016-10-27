@@ -28,7 +28,9 @@ namespace BulkDeleteCreate.Repositories
             user.GroupMembers.Clear();
             var groupMembersToAdd = GetGroupMembershipsToAdd();
             user.GroupMembers.AddRange(groupMembersToAdd);
-            await _context.SaveChangesAsync();
+            //this will fail when saving changes in DB.
+            //Notice that if the groupMembership to add are not for any of the current groups it will succeed.
+            await _context.SaveChangesAsync(); 
         }
 
         private IEnumerable<GroupMember> GetGroupMembershipsToAdd()

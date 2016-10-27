@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BulkDeleteAndCreate.Migrations
 {
-    public partial class Initial : Migration
+    public partial class SampleDatabaseMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

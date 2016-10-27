@@ -21,10 +21,12 @@ namespace BulkDeleteCreate.Controllers
             try
             {
                 await _testRepository.UpdateGroupMembershipsAsync(AppSettings.UserId);
+                Console.WriteLine("All good!");
                 return Ok("all good");
             }
             catch(Exception e)
             {
+                Console.WriteLine(e.Message);
                 return BadRequest(e);
             }
         }

@@ -8,8 +8,8 @@ using BulkDeleteCreate.SqlServer;
 namespace BulkDeleteAndCreate.Migrations
 {
     [DbContext(typeof(SampleContext))]
-    [Migration("20161026234719_Initial")]
-    partial class Initial
+    [Migration("20161027001248_SampleDatabaseMigration")]
+    partial class SampleDatabaseMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
