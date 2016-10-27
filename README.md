@@ -24,4 +24,12 @@ cd EntityFramework6873/src/BulkDeleteAndCreate
 dotnet run
 ```
 
-* View the log on console
+## Update solution
+As per [my answer here] (https://github.com/aspnet/EntityFramework/issues/6873#issuecomment-256524763) it seems 
+that the alternate key was causing the issue and the problem is gone when using an index to enforce uniqueness rather
+than the alternate key.
+
+```
+//entityBuilder.HasAlternateKey(t => new { t.UserId, t.GroupId });
+entityBuilder.HasIndex(t => new { t.UserId, t.GroupId });
+```
