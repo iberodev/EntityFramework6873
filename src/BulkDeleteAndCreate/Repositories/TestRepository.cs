@@ -3,6 +3,8 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System;
 using System.Threading.Tasks;
+using BulkDeleteCreate.Model;
+using System.Collections.Generic;
 
 namespace BulkDeleteCreate.Repositories
 {
@@ -21,6 +23,22 @@ namespace BulkDeleteCreate.Repositories
                 .Include(u => u.GroupMembers).ThenInclude(gm => gm.Group)
                 .Where(u => u.Id == userId)
                 .SingleOrDefaultAsync();
+
+            _context.GroupMembers.RemoveRange(user.GroupMembers);
+            user.GroupMembers.Clear();
+            var groupMembersToAdd = GetGroupMembershipsToAdd();
+            user.GroupMembers.AddRange(groupMembersToAdd);
+            await _context.SaveChangesAsync();
+        }
+
+        private IEnumerable<GroupMember> GetGroupMembershipsToAdd()
+        {
+            var groupIdsToAdd = AppSettings.GetTheWhoMetallicaAndPinkFloydList();
+            var groupMemberships = groupIdsToAdd.Select(id => new GroupMember
+            {
+                GroupId = id
+            });
+            return groupMemberships;
         }
     }
 }

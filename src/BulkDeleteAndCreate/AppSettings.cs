@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace BulkDeleteCreate
 {
@@ -9,5 +11,12 @@ namespace BulkDeleteCreate
         public static Guid TheWhoId = new Guid("8263f1f5-ea1c-4f96-bafe-ef759daf1ee2");
         public static Guid MetallicaId = new Guid("8263f1f5-ea1c-4f96-bafe-ef759daf1ee3");
         public static Guid PinkFloydId = new Guid("8263f1f5-ea1c-4f96-bafe-ef759daf1ee4");
+        public static IEnumerable<Guid> GetTheWhoMetallicaAndPinkFloydList()
+        {
+            return new List<Guid>
+            {
+                MetallicaId, PinkFloydId
+            };
+        }
     }
 }
